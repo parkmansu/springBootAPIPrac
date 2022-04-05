@@ -41,11 +41,11 @@ public class RestaurantService {
 
     public void minOrderPricecheck(int minOrderPrice) {
         // 2. 최소주문가격(minOrderPrice) - 1,000 ~ 100,000사이 금액, - 단위는 100원 단위 허용.
-        if (!(minOrderPrice<1000 && minOrderPrice>100000)) {
+        if (!(minOrderPrice>=1000 && minOrderPrice<=100000)) {
             throw new IllegalStateException("최수 주문 가격 허용값 에러");
         }
 
-        if (minOrderPrice % 100 != 0) {
+        if (minOrderPrice % 100 > 0) {
             throw new IllegalStateException("최수 주문 가격 단위 에러");
         }
 
@@ -54,11 +54,11 @@ public class RestaurantService {
     // 3. 기본배달비(deliveryFee) - 0 ~ 10,000사이 금액, - 단위는 500원 단위 허용.
     public void deliveryFeecheck(int deliveryFee) {
 
-        if (deliveryFee<0 && deliveryFee>10000) {
+        if (deliveryFee<0 || deliveryFee>10000) {
             throw new IllegalStateException("기본 배달비 금액 허용값 에러");
         }
 
-        if (deliveryFee % 500 != 0) {
+        if (deliveryFee % 500 > 0) {
             throw new IllegalStateException("기본 배달비 금액 단위 에러");
         }
 
