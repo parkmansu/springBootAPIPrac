@@ -15,6 +15,7 @@ public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "RestaurantId")
     private Long id;
     // PK
 

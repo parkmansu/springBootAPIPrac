@@ -22,11 +22,10 @@ public class RestaurantController {
 
     // 음식점 등록
     @PostMapping("/restaurant/register")
-    public Restaurant register(@RequestBody RestaurantDto restaurantDto) throws IllegalAccessException {
+    public Restaurant register(@RequestBody RestaurantDto restaurantDto) {
 
         return restaurantService.register(restaurantDto);
     }
-
 
 
 
